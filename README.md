@@ -10,7 +10,7 @@ The assignment required at least 4 experiments. I ran 6, testing Decision Tree, 
 
 Healthcare providers have no fast, reliable way to screen patients for vitamin deficiency-related diseases without extensive lab work. This model takes a patient's dietary intake, clinical measurements and reported symptoms as input and predicts which of five diagnostic categories they fall into: Healthy, Anemia, Rickets/Osteomalacia, Night Blindness or Scurvy.
 
-The prediction is used to recommend a personalised vitamin intake plan. Missing a disease diagnosis is far more harmful than a false positive, so recall on minority classes — particularly Scurvy (176 patients) and Night Blindness (269 patients) — was the primary clinical concern throughout all experiments.
+The prediction is used to recommend a personalised vitamin intake plan. Missing a disease diagnosis is far more harmful than a false positive, so recall on minority classes, particularly Scurvy (176 patients) and Night Blindness (269 patients) was the primary clinical concern throughout all experiments.
 
 ---
 
@@ -18,7 +18,7 @@ The prediction is used to recommend a personalised vitamin intake plan. Missing 
 
 5800 patient records with 45 columns including demographic information, lifestyle factors, vitamin intake percentages as a proportion of the Recommended Dietary Allowance, blood serum measurements and binary symptom flags. Data was provided as part of UTS course assessment and cannot be shared publicly.
 
-**Target variable:** `disease_diagnosis` — 5 classes with a 12.1x imbalance between Healthy (2121) and Scurvy (176).
+**Target variable:** `disease_diagnosis` - 5 classes with a 12.1x imbalance between Healthy (2121) and Scurvy (176).
 
 ---
 
@@ -26,8 +26,8 @@ The prediction is used to recommend a personalised vitamin intake plan. Missing 
 
 ### Data Cleaning
 721 rows were dropped from the original 5800, leaving 5079 clean records (87.6% retained):
-- 271 rows with negative values in serum and vitamin intake columns — biologically impossible data entry errors
-- 369 rows with Unknown entries in categorical columns — investigation confirmed these rows had missing values across multiple other columns simultaneously, indicating low quality records
+- 271 rows with negative values in serum and vitamin intake columns - biologically impossible data entry errors
+- 369 rows with Unknown entries in categorical columns - investigation confirmed these rows had missing values across multiple other columns simultaneously, indicating low quality records
 - 81 rows overlap between the two groups
 
 ### Feature Selection
@@ -59,7 +59,7 @@ Stratified 70/15/15 train/validation/test split with `random_state=42` throughou
 
 **Final model:** HistGradientBoosting from Experiment 3, selected on highest validation macro F1 of 0.7647 and smallest cross-val to validation gap.
 
-**Test set result:** Macro F1 of 0.7625 — a gap of just 0.002 from validation, confirming the model generalises reliably to unseen data.
+**Test set result:** Macro F1 of 0.7625 - a gap of just 0.002 from validation, confirming the model generalises reliably to unseen data.
 
 ---
 
