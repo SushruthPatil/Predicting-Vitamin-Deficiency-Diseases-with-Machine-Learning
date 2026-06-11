@@ -49,7 +49,7 @@ Stratified 70/15/15 train/validation/test split with `random_state=42` throughou
 
 | Experiment | Model | Val Macro F1 | Outcome |
 |---|---|---|---|
-| Baseline | DummyClassifier (most frequent) | 0.1073 | — |
+| Baseline | DummyClassifier (most frequent) | 0.1073 | - |
 | Experiment 1 | Decision Tree + GridSearchCV | 0.6809 | Partially Confirmed |
 | Experiment 2 | Random Forest + RandomizedSearchCV | 0.7329 | Partially Confirmed |
 | Experiment 3 | HistGradientBoosting + RandomizedSearchCV | **0.7647** | Confirmed |
@@ -68,7 +68,7 @@ Stratified 70/15/15 train/validation/test split with `random_state=42` throughou
 - Tree-based models significantly outperformed linear models. The vitamin deficiency classification problem is non-linear and tree ensembles handled this naturally
 - SMOTE did not help. Logistic Regression with SMOTE scored 0.5770 and SVM with SMOTE scored 0.5990, both below all tree-based results. The problem is model capacity, not just class imbalance
 - Scurvy remained the hardest class across all experiments, peaking at 0.52 F1. The 12.1x imbalance and high overlap with Anemia made it consistently difficult
-- The strongest individual features were vitamin_c_intake, vitamin_a_intake and serum_vitamin_d — all with direct clinical links to specific disease classes
+- The strongest individual features were vitamin_c_intake, vitamin_a_intake and serum_vitamin_d - all with direct clinical links to specific disease classes
 - Engineered symptom score features contributed meaningfully, particularly rickets_symptom_score and scurvy_symptom_score
 
 ---
@@ -113,5 +113,7 @@ This project was completed as part of UTS 36106 Machine Learning Algorithms and 
 ## Author
 
 Sushruta Gangadhar Patil
+
 Master of Data Science and Innovation
+
 University of Technology Sydney
